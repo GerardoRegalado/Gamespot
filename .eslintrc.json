@@ -1,0 +1,95 @@
+{
+    "root": true,
+    "ignorePatterns": ["!**/*"],
+    "plugins": ["prettier", "simple-import-sort", "@typescript-eslint", "import", "jsdoc", "html"],
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+            "rules": {
+                "@nrwl/nx/enforce-module-boundaries": [
+                    "error",
+                    {
+                        "enforceBuildableLibDependency": true,
+                        "allow": []
+                    }
+                ],
+                "@typescript-eslint/no-misused-promises": [
+                    "warn",
+                    {
+                        "checksVoidReturn": false,
+                        "checksConditionals": true
+                    }
+                ],
+                "@typescript-eslint/no-empty-function": [
+                    "error",
+                    {
+                        "allow": ["constructors"]
+                    }
+                ],
+                "@typescript-eslint/no-unused-vars": "error",
+                "@typescript-eslint/no-unused-expressions": [
+                    "error",
+                    {
+                        "allowShortCircuit": true,
+                        "allowTernary": true
+                    }
+                ],
+                "@typescript-eslint/ban-types": "error",
+                "@typescript-eslint/member-ordering": "error",
+                "@typescript-eslint/dot-notation": "error",
+                "@typescript-eslint/no-shadow": "error",
+                "@typescript-eslint/no-underscore-dangle": "off",
+                "@typescript-eslint/no-this-alias": [
+                    "error",
+                    {
+                        "allowedNames": ["self"]
+                    }
+                ],
+                "yoda": [2, "never"],
+                "simple-import-sort/imports": "error",
+                "no-compare-neg-zero": "error",
+                "eqeqeq": "error",
+                "no-magic-numbers": [
+                    "error",
+                    {
+                        "ignore": [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 40, 90, 100, 200, 201, 204, 400, 404, 500, 2000, 10000, 15000],
+                        "ignoreArrayIndexes": true
+                    }
+                ],
+                "no-unsafe-assignment": "off",
+                "no-underscore-dangle": "off",
+                "arrow-body-style": ["error", "as-needed"],
+                "prefer-arrow-callback": "error",
+                "no-undef-init": "error",
+                "max-classes-per-file": ["error", 1],
+                "prettier/prettier": "error",
+                "brace-style": ["error", "1tbs"],
+                "import/no-self-import": "error",
+                "import/named": "off",
+                "import/namespace": 2,
+                "import/default": 2,
+                "import/export": "error",
+                "import/no-unresolved": "off",
+                "@typescript-eslint/no-explicit-any": "off",
+                "@typescript-eslint/restrict-template-expressions": "off"
+            }
+        },
+        {
+            "files": ["*.ts", "*.tsx"],
+            "extends": ["plugin:@nrwl/nx/typescript"],
+            "rules": {}
+        },
+        {
+            "files": ["*.class.ts"],
+            "extends": ["plugin:@nrwl/nx/typescript"],
+            "rules": {
+                "@typescript-eslint/no-unused-vars": "error"
+            }
+        },
+        {
+            "files": ["*.js", "*.jsx"],
+            "extends": ["plugin:@nrwl/nx/javascript"],
+            "rules": {}
+        }       
+    ]
+}
