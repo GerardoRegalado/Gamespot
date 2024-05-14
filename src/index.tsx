@@ -1,8 +1,9 @@
 import ReactDOM from 'react-dom/client';
+import 'semantic-ui-css/semantic.min.css';
+
+import Router from './Routes'
 import './index.css';
 
-import 'semantic-ui-css/semantic.min.css';
-import Router from './Routes'
 
 
 const root = ReactDOM.createRoot(

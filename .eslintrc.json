@@ -1,7 +1,7 @@
 {
     "root": true,
     "ignorePatterns": ["!**/*"],
-    "plugins": ["prettier", "simple-import-sort", "@typescript-eslint", "import", "jsdoc", "html"],
+    "plugins": ["@typescript-eslint", "import", "jsdoc", "html"],
     "overrides": [
         {
             "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -31,7 +31,6 @@
                     }
                 ],
                 "yoda": [2, "never"],
-                "simple-import-sort/imports": "error",
                 "no-compare-neg-zero": "error",
                 "eqeqeq": "error",
                 "no-magic-numbers": [
@@ -47,7 +46,6 @@
                 "prefer-arrow-callback": "error",
                 "no-undef-init": "error",
                 "max-classes-per-file": ["error", 1],
-                "prettier/prettier": "error",
                 "brace-style": ["error", "1tbs"],
                 "import/no-self-import": "error",
                 "import/named": "off",
