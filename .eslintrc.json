@@ -6,20 +6,6 @@
         {
             "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
             "rules": {
-                "@nrwl/nx/enforce-module-boundaries": [
-                    "error",
-                    {
-                        "enforceBuildableLibDependency": true,
-                        "allow": []
-                    }
-                ],
-                "@typescript-eslint/no-misused-promises": [
-                    "warn",
-                    {
-                        "checksVoidReturn": false,
-                        "checksConditionals": true
-                    }
-                ],
                 "@typescript-eslint/no-empty-function": [
                     "error",
                     {
@@ -36,7 +22,6 @@
                 ],
                 "@typescript-eslint/ban-types": "error",
                 "@typescript-eslint/member-ordering": "error",
-                "@typescript-eslint/dot-notation": "error",
                 "@typescript-eslint/no-shadow": "error",
                 "@typescript-eslint/no-underscore-dangle": "off",
                 "@typescript-eslint/no-this-alias": [
@@ -76,19 +61,16 @@
         },
         {
             "files": ["*.ts", "*.tsx"],
-            "extends": ["plugin:@nrwl/nx/typescript"],
             "rules": {}
         },
         {
             "files": ["*.class.ts"],
-            "extends": ["plugin:@nrwl/nx/typescript"],
             "rules": {
                 "@typescript-eslint/no-unused-vars": "error"
             }
         },
         {
             "files": ["*.js", "*.jsx"],
-            "extends": ["plugin:@nrwl/nx/javascript"],
             "rules": {}
         }       
     ]
