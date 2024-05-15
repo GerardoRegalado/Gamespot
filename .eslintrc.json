@@ -1,75 +1,36 @@
 {
-    "root": true,
-    "ignorePatterns": ["!**/*"],
-    "plugins": ["@typescript-eslint", "import", "jsdoc", "html"],
-    "overrides": [
-        {
-            "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-            "rules": {
-                "@typescript-eslint/no-empty-function": [
-                    "error",
-                    {
-                        "allow": ["constructors"]
-                    }
-                ],
-                "@typescript-eslint/no-unused-vars": "error",
-                "@typescript-eslint/no-unused-expressions": [
-                    "error",
-                    {
-                        "allowShortCircuit": true,
-                        "allowTernary": true
-                    }
-                ],
-                "@typescript-eslint/ban-types": "error",
-                "@typescript-eslint/member-ordering": "error",
-                "@typescript-eslint/no-shadow": "error",
-                "@typescript-eslint/no-underscore-dangle": "off",
-                "@typescript-eslint/no-this-alias": [
-                    "error",
-                    {
-                        "allowedNames": ["self"]
-                    }
-                ],
-                "yoda": [2, "never"],
-                "no-compare-neg-zero": "error",
-                "eqeqeq": "error",
-                "no-magic-numbers": [
-                    "error",
-                    {
-                        "ignore": [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 40, 90, 100, 200, 201, 204, 400, 404, 500, 2000, 10000, 15000],
-                        "ignoreArrayIndexes": true
-                    }
-                ],
-                "no-unsafe-assignment": "off",
-                "no-underscore-dangle": "off",
-                "arrow-body-style": ["error", "as-needed"],
-                "prefer-arrow-callback": "error",
-                "no-undef-init": "error",
-                "max-classes-per-file": ["error", 1],
-                "brace-style": ["error", "1tbs"],
-                "import/no-self-import": "error",
-                "import/named": "off",
-                "import/namespace": 2,
-                "import/default": 2,
-                "import/export": "error",
-                "import/no-unresolved": "off",
-                "@typescript-eslint/no-explicit-any": "off",
-                "@typescript-eslint/restrict-template-expressions": "off"
-            }
-        },
-        {
-            "files": ["*.ts", "*.tsx"],
-            "rules": {}
-        },
-        {
-            "files": ["*.class.ts"],
-            "rules": {
-                "@typescript-eslint/no-unused-vars": "error"
-            }
-        },
-        {
-            "files": ["*.js", "*.jsx"],
-            "rules": {}
-        }       
-    ]
-}
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react",
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "warn",
+      "@typescript-eslint/explicit-module-boundary-types": "warn",
+      "@typescript-eslint/no-explicit-any": "warn"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  }
+  
