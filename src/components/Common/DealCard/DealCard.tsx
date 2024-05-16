@@ -34,11 +34,10 @@ export const DealCard: React.FC<DealCardProps> = ({deal}) => {
                     </Card.Text>
                 </div>
                 <div className="buttons">
-                <Button className='details' onClick={() => {navigate(`/deal/${deal.dealID}`)}}>See Details</Button>
-                <Button className='cart' onClick={() => {dispatch(addToCart(deal))}}> 
-                    <IoCartOutline className='cart-icon' size={19}/>
-                </Button>
-
+                    <Button className='details' onClick={() => {navigate(`/deal/${deal.dealID}`)}}>See Details</Button>
+                    <Button className='cart' onClick={() => {dispatch(addToCart(deal))}}> 
+                        <IoCartOutline className='cart-icon' size={19}/>
+                    </Button>
                 </div>
             </Card.Body>
         </Card>
