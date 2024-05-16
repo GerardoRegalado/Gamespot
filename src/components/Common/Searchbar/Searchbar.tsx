@@ -1,16 +1,20 @@
+//Package Imports
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, FormControl, ListGroup } from 'react-bootstrap';
-import { fetchDeals } from '../../../api';
+
+//Local Imports
 import './Searchbar.scss';
+import { fetchDeals } from '../../../api';
 import { DealInterface } from '../../../interfaces/dealInterface';
 
-const SearchBar: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredDeals, setFilteredDeals] = useState<DealInterface[]>([]);
+
+const SearchBar: React.FC = (): JSX.Element => {
+  const [searchTerm, setSearchTerm] = useState(''); //state for the search string.
+  const [filteredDeals, setFilteredDeals] = useState<DealInterface[]>([]); //state for the deals filtered by the string.
   const [showDropdown, setShowDropdown] = useState(false);
-  const navigate = useNavigate();
-  const wrapperRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate(); // used to navigate to details.
+  const wrapperRef = useRef<HTMLDivElement>(null); //to reference a value.
 
   useEffect(() => {
     const searchDeals = async () => {

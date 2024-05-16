@@ -1,9 +1,13 @@
+//Package Imports
 import { Navbar, Container, Nav } from 'react-bootstrap'
+
+//Local Imports
 import './HeaderComponent.scss'
 import { CartComponent } from '../../Cart/CartComponent/CartComponent'
 import SearchBar from '../../Common/Searchbar/Searchbar'
 
-export const HeaderComponent = () => {
+
+export const HeaderComponent: React.FC = () :JSX.Element => {
   
   return (
     <>

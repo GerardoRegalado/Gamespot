@@ -1,17 +1,21 @@
+//Package Imports
 import React from 'react'
-import { DealInterface } from '../../../interfaces/dealInterface'
 import { Button, Card } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../../redux/reducers/cartReducer';
-import "./DealCard.scss"
 import { IoCartOutline } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
+
+//Local Imports
+import "./DealCard.scss"
+import { DealInterface } from '../../../interfaces/dealInterface'
+import { addToCart } from '../../../redux/reducers/cartReducer';
+
 interface DealCardProps {
     deal: DealInterface;
   }
-export const DealCard: React.FC<DealCardProps> = ({deal}) => {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+export const DealCard: React.FC<DealCardProps> = ({deal}):JSX.Element => {
+    const dispatch = useDispatch(); //to update the state managed by redux store.
+    const navigate = useNavigate(); //to navigate to the deal path.
     
 
   return (

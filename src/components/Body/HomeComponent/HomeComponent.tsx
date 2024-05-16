@@ -1,24 +1,24 @@
+//Package Imports
+import 'swiper/css/bundle';
 import React, { useEffect, useState } from 'react'
-import { DealInterface } from '../../../interfaces/dealInterface';
-import { fetchDeals } from '../../../api/apiProduct';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
-
-import 'swiper/css/bundle';
-
-import './HomeComponent.scss'
-import { ProductList } from '../../ProductList/ProductList';
-import { DealCard } from '../../Common/DealCard/DealCard';
 import { Spinner } from 'react-bootstrap';
 
+//Local Imports
+import './HomeComponent.scss'
+import { DealInterface } from '../../../interfaces/dealInterface';
+import { fetchDeals } from '../../../api/apiProduct';
+import { ProductList } from '../../ProductList/ProductList';
+import { DealCard } from '../../Common/DealCard/DealCard';
 
-export const HomeComponent = () => {
-  const [deals, setDeals] = useState<DealInterface[]>([]); // State para productos
-  const [ cheaperDeals, setCheaperDeals] = useState<DealInterface[]>([])
-  const [loading, setLoading] = useState(true); // State para loading
 
-  const getDeals = async () => {
+export const HomeComponent: React.FC = (): JSX.Element => {
+  const [deals, setDeals] = useState<DealInterface[]>([]); // State for products.
+  const [ cheaperDeals, setCheaperDeals] = useState<DealInterface[]>([]) //state for save the first elements in the array that represents cheaper games.
+  const [loading, setLoading] = useState(true); // State for loading loading.
+
+  const getDeals = async (): Promise<void> => {
     try {
       const data = await fetchDeals();
       setDeals(data);
@@ -30,12 +30,12 @@ export const HomeComponent = () => {
   };
 
 
-  useEffect(() => {
+  useEffect(():void => {
     getDeals();
 
   }, []);
 
-  useEffect(() => {
+  useEffect(():void => {
     if (deals.length > 0) {
       const sortedDeals = deals
         .sort((a, b) => parseFloat(a.salePrice) - parseFloat(b.salePrice))

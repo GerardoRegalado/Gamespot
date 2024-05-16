@@ -1,24 +1,27 @@
+//Package Imports
 import React, { useState } from 'react';
 import { NavDropdown, Button } from 'react-bootstrap';
 import { IoIosRemoveCircleOutline, IoIosAddCircleOutline } from 'react-icons/io';
 import { IoCartOutline } from 'react-icons/io5';
 import { MdCircle, MdDelete } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
+
+//Local Imports
+import './CartComponent.scss';
 import { RootState } from '../../../redux/store';
 import { removeFromCart, adjustQty } from '../../../redux/reducers/cartReducer';
-import './CartComponent.scss';
 
-export const CartComponent = () => {
-    const cartItems = useSelector((state: RootState) => state.cart.cart);
-    const [dropdownVisible, setDropdownVisible] = useState(false);
-    const dispatch = useDispatch();
+export const CartComponent: React.FC = (): JSX.Element => {
+    const cartItems = useSelector((state: RootState) => state.cart.cart); // extract data from the redux store state.
+    const [dropdownVisible, setDropdownVisible] = useState(false); // state for the visibility of dropdown.
+    const dispatch = useDispatch(); //to update the state managed by the redux store.
 
-    const handleRemove = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, id: string) => {
+    const handleRemove = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, id: string): void => {
         event.stopPropagation();
         dispatch(removeFromCart(id));
     }
 
-    const handleQtyChange = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, id: string, qty: number) => {
+    const handleQtyChange = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, id: string, qty: number): void => {
         event.stopPropagation();
         if(qty > 0) {
           dispatch(adjustQty({ id, qty }));

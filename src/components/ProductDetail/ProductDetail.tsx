@@ -1,31 +1,38 @@
+//Package Imports
 import React, { useEffect, useState } from 'react';
-import './ProductDetail.scss';
 import { Button, Col, Container, Row, Spinner } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchDealById } from '../../api';
-import { DealDetailsInterface } from '../../interfaces/dealDetail';
 import { useDispatch } from 'react-redux';
 import { IoCartOutline } from 'react-icons/io5';
+
+//Local Imports
+import './ProductDetail.scss';
+import { fetchDealById } from '../../api';
+import { DealDetailsInterface } from '../../interfaces/dealDetail';
 import { addToCart } from '../../redux/reducers/cartReducer';
 import { DealInterface } from '../../interfaces/dealInterface';
 
-export const ProductDetail: React.FC = () => {
-const navigate = useNavigate()
-  const dispatch = useDispatch();
-  const { id } = useParams<{ id: string }>();
-  const [deal, setDeal] = useState<DealDetailsInterface | null>(null);
-  const [itemToCart, setItemToCart] = useState<DealInterface | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+
+export const ProductDetail: React.FC = (): JSX.Element => {
+  const navigate = useNavigate() // to navigage back home.
+  const dispatch = useDispatch(); //to update the state managed by the redux store.
+  const { id } = useParams<{ id: string }>(); // getting id from url params.
+  const [deal, setDeal] = useState<DealDetailsInterface | null>(null); // state for deal to look for.
+  const [itemToCart, setItemToCart] = useState<DealInterface | null>(null); // state for item to send to the cart.
+  const [loading, setLoading] = useState(true); // loading spinner flag.
+  const [error, setError] = useState<string | null>(null); // state for error handling
 
   useEffect(() => {
     const getDeal = async () => {
       try {
-        const data = await fetchDealById(id!);
-        setDeal(data);
-        setLoading(false);
+        if (id) {
+          const data = await fetchDealById(id);
+          setDeal(data);
+          setLoading(false);
+        }
       } catch (err) {
         setError('Failed to fetch deal details');
+        console.log(error)
         setLoading(false);
       }
     };
