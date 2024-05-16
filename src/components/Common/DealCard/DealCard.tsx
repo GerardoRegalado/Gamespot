@@ -18,7 +18,7 @@ export const DealCard: React.FC<DealCardProps> = ({deal}) => {
     <>
         <Card className='card-container' >
             <Card.Img className='card-image' variant="top" src={deal.thumb}/>
-            <Card.Body className='card-body' style={{ }}>
+            <Card.Body className='card-body' >
                 <div className='desc'>
                     <Card.Title className='card-title'>
                         {deal.title}
@@ -36,7 +36,7 @@ export const DealCard: React.FC<DealCardProps> = ({deal}) => {
                 <div className="buttons">
                 <Button className='details' onClick={() => {navigate(`/deal/${deal.dealID}`)}}>See Details</Button>
                 <Button className='cart' onClick={() => {dispatch(addToCart(deal))}}> 
-                    <IoCartOutline size={19} style={{position: 'relative', display: 'inline-block'}}/>
+                    <IoCartOutline className='cart-icon' size={19}/>
                 </Button>
 
                 </div>

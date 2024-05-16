@@ -10,6 +10,7 @@ import 'swiper/css/bundle';
 import './HomeComponent.scss'
 import { ProductList } from '../../ProductList/ProductList';
 import { DealCard } from '../../Common/DealCard/DealCard';
+import { Spinner } from 'react-bootstrap';
 
 
 export const HomeComponent = () => {
@@ -42,6 +43,15 @@ export const HomeComponent = () => {
       setCheaperDeals(sortedDeals);
     }
   }, [deals]);
+
+  if (loading) {
+    return (
+      <div className="spinner">
+        <Spinner animation="border" variant="primary" />
+      </div>
+    )
+  }
+
 
   return (
     <>

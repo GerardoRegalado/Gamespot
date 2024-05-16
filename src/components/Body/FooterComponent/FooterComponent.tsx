@@ -1,7 +1,10 @@
 import React from 'react'
+import './FooterComponent.scss'
 
 export const FooterComponent = () => {
   return (
-    <div>FooterComponent</div>
+    <footer className='footer'>
+      <p>Fake Store</p>
+    </footer>
   )
 }

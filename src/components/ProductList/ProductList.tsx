@@ -15,8 +15,8 @@ export const ProductList:React.FC<DealCardProps> = ({deal}) => {
             <Row>
             {deal.map(deal => (
             <>
-              <Col key={deal.dealID} className='col-card'>
-                <DealCard deal={deal} />
+              <Col className='col-card'>
+                <DealCard key={deal.dealID} deal={deal} />
               </Col>
             </>
           ))}

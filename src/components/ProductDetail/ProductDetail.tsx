@@ -87,7 +87,7 @@ const navigate = useNavigate()
                     </div>
                     <div className="button">
                     <Button className='cart' onClick={() => { dispatch(addToCart(itemToCart!)) }}>
-                      Add to cart<IoCartOutline size={19} style={{ position: 'relative', display: 'inline-block' }} />
+                      Add to cart<IoCartOutline size={19}  />
                     </Button>
                     </div>
                   </div>
