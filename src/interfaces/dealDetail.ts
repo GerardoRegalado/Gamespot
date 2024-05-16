@@ -1,22 +1,23 @@
-import { DealInterface } from "./dealInterface";
 
-  
-  export interface DealDetailsInterface extends DealInterface {
-    gameID: string;
-    steamAppID: string;
-    cheapestPrice: string;
-    cheapestPriceDate: number;
-    releaseDate: number;
-    publisher: string;
-    steamRatingText: string;
-    steamRatingPercent: string;
-    steamRatingCount: string;
-    metacriticScore: string;
-    metacriticLink: string;
-    dealRating: string;
-    storeID: string;
-    storeName: string;
-    price: string;
-    retailPrice: string;
-    savings: string;
-  }
+interface GameInfo {
+  storeID: string;
+  gameID: string;
+  name: string;
+  steamAppID: string | null;
+  salePrice: string;
+  retailPrice: string;
+  steamRatingText: string | null;
+  steamRatingPercent: string;
+  steamRatingCount: string;
+  metacriticScore: string;
+  metacriticLink: string | null;
+  releaseDate: number;
+  publisher: string;
+  steamworks: string | null;
+  thumb: string;
+}
+
+
+export interface DealDetailsInterface {
+  gameInfo: GameInfo;
+}

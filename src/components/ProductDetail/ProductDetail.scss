@@ -1,0 +1,68 @@
+.deal-details-container {
+    margin-top: 5vh;
+    width: 100%;
+    height: auto;
+}
+
+.image-container {
+    height: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.deal-info-container {
+    width: 100%;
+    flex-direction: column;
+}
+
+.deal-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+        font-family: "Permanent Marker", system-ui;
+        color: #FFC007;
+
+    }
+}
+
+.deal-general-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5vw;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    margin-top: 5vh;
+}
+
+.retail {
+    color: red;
+    text-decoration: line-through;
+}
+
+.hot-price {
+    color: green;
+}
+
+p {
+    font-size: large;
+    color: white;
+    font-weight: bold;
+}
+
+.button {
+    width: 100%;
+
+    .cart {
+        width: 100%;
+    }
+}

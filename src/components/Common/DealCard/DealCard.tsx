@@ -5,11 +5,13 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../redux/reducers/cartReducer';
 import "./DealCard.scss"
 import { IoCartOutline } from 'react-icons/io5';
+import { useNavigate } from 'react-router-dom';
 interface DealCardProps {
     deal: DealInterface;
   }
 export const DealCard: React.FC<DealCardProps> = ({deal}) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     
 
   return (
@@ -32,7 +34,7 @@ export const DealCard: React.FC<DealCardProps> = ({deal}) => {
                     </Card.Text>
                 </div>
                 <div className="buttons">
-                <Button className='details' onClick={() => {dispatch(addToCart(deal))}}>See Details</Button>
+                <Button className='details' onClick={() => {navigate(`/deal/${deal.dealID}`)}}>See Details</Button>
                 <Button className='cart' onClick={() => {dispatch(addToCart(deal))}}> 
                     <IoCartOutline size={19} style={{position: 'relative', display: 'inline-block'}}/>
                 </Button>
