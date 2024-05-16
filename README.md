@@ -53,15 +53,17 @@ Start the server
   <img width="12" />
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="30" alt="vscode logo"  />
   <img width="12" />
-
+</div>
 
 
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Captura de pantalla 2024-05-16 a la(s) 04 07 49](https://github.com/GerardoRegalado/Gamespot/assets/97474369/0851e8bd-73d5-4dca-8011-10142df9c920)
+
+
+![Captura de pantalla 2024-05-16 a la(s) 04 08 22](https://github.com/GerardoRegalado/Gamespot/assets/97474369/ffecc229-e221-4e05-aed9-cef4583206cb)
 
 
 ## Authors
