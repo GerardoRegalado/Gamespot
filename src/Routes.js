@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
-import { HomeComponent } from './components/Body/HomeComponent'
+import { HomeComponent } from './components/Body/HomeComponent/HomeComponent'
 
 const GameSpotRoutes = () => (
   <Router>

@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+.home-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15vh;
+}
+
+.title {
+    font-family: "Permanent Marker", system-ui;
+    font-weight: 400;
+    color: #FF7A06;
+    margin-top: 15vh;
+    margin-bottom: 10vh;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.deal-card {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.image {
+    width: 100%;
+    margin: 0;
+    height: 100%;
+}
+
+.deals {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10vh;
+    width: 100%;
+}
+

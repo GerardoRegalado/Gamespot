@@ -1,8 +1,8 @@
+import { DealInterface } from "./dealInterface";
+
   
-  export interface CartItem {
-    dealID: string;
-    title: string;
-    price: string;
-    quantity: number;
+  export interface CartState {
+    cart: DealInterface[];
+    total: number;
   }
   

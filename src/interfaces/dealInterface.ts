@@ -4,6 +4,7 @@ export interface DealInterface {
     salePrice: string;
     normalPrice: string;
     savings: string;
-    thumbnail: string;
+    quantity: number;
+    thumb: string;
   }
 
